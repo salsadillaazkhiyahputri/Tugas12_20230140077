@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>DOM Javascript</title>
+  <style>
+    /* CSS*/
+    body {
+      background: linear-gradient(135deg, #ffeef8 0%, #e8f4fd 50%, #f0e6ff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 192, 203, 0.2);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header h3 {
+      font-size: 2.5em;
+      background: linear-gradient(45deg, #ff9a9e, #a8e6cf, #fecfef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    label {
+      font-weight: 600;
+      color: #6b46c1;
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 1.1em;
+    }
+
+    input[type="text"], input[type="date"], select, textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #e8c5e5;
+      border-radius: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background: rgba(255, 240, 245, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff9a9e, #fecfef, #a8e6cf);
+      color: white;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 30px;
+      width: 100%;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255, 154, 158, 0.4);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255, 154, 158, 0.6);
+      background: linear-gradient(45deg, #fecfef, #ff9a9e, #a8e6cf);
+    }
+
+    button:active {
+      transform: translateY(-1px);
+    }
+
+    p {
+      font-weight: 600;
+      color: #6b46c1;
+      margin-top: 25px;
+      margin-bottom: 15px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h3>✨ Pendaftaran Peminatan ✨</h3>
+    </div>
+    <form action="#" id="formPeminatan">
+      <label for="nama">👤 Nama</label>
+      <input type="text" id="nama" placeholder="Masukkan nama anda" />
+
+      <label for="nim">🆔 NIM</label>
+      <input type="text" id="nim" placeholder="Masukkan NIM anda" />
+
+      <p>💼 Peminatan pada bidang:</p>
+      <label for="peminatan">Pilih Peminatan</label>
+      <select id="peminatan">
+        <option value="">-- Pilih Peminatan --</option>
+        <option value="💻 Programming">💻 Programming</option>
+        <option value="🎨 Desain">🎨 Desain</option>
+        <option value="🌐 Jaringan">🌐 Jaringan</option>
+        <option value="📊 Basis Data">📊 Basis Data</option>
+      </select>
+
+      <label for="alamat">🏠 Alamat</label>
+      <textarea id="alamat" placeholder="Masukkan alamat lengkap..." cols="30" rows="5"></textarea>
+
+      <label for="angkatan">🎓 Pilih Angkatan</label>
+      <select id="angkatan">
+        <option value="">-- Pilih Angkatan --</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+        <option value="2025">2025</option>
+      </select>
+
+      <label for="tanggal">📅 Tanggal</label>
+      <input type="date" id="tanggal" />
+
+      <button type="submit" onclick="kirimData(event)">🚀 Kirim Data</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
